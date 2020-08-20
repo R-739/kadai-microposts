@@ -1,16 +1,17 @@
 <div class="row">
-    <aside class="col-sm-4">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">
+  <aside class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">
 <%= @user.name %>
 </h3>
-            </div>
-            <div class="rounded img-fluid" src="
-            <%= gravatar_url(@user, { size: 500 }) %>
-            " alt="">
-            </div>
-        </div>
+      </div>
+      <div class="card-body">
+        <img class="rounded img-fluid" src="
+<%= gravatar_url(@user, { size: 500 }) %>
+" alt="">
+      </div>
+    </div>
         
         <%= render 'relationships/follow_button', user: @user %>
         
@@ -38,6 +39,8 @@
             ">Followers <span class="badge badge-secondary">
                 <%= @count_followers %> 
                 </span></a></li>
+                
+            </ul>
         </ul>
         
 <%= render 'users', users: @followers %>
