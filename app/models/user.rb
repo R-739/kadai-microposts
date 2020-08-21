@@ -7,7 +7,7 @@ class User < ApplicationRecord
     has_secure_password
     
     has_many :favorites
-    has_many :favorite_microposts, through: :favorites, source: :micropost
+    has_many :favorite_microposts, through: :favorites, source: :micropost, dependent: :destroy
     has_many :microposts
     has_many :relationships
     has_many :followings, through: :relationships, source: :follow
